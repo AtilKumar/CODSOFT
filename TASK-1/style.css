@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --bgColor:#e84949;
+}
+#wrapper{
+    height: 100vh;
+    /* max-width: 100%; */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+.nav-bar{
+    /* height: 30rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* border: 2px solid red; */
+    /* margin-top: 1rem; */
+}
+.logo-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.logo{
+    height: 5rem;
+    width: 50%;
+}
+.logo-text{
+    font-size: 1.4rem;
+    margin-left: -1.2rem;
+}
+.nav-items{
+    display: flex;
+    gap: 1.5em;
+    /* align-items: center; */
+}
+.nav-items a{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+
+    text-decoration: none;
+    color: rgb(82, 79, 79);
+}
+.nav-items a:hover{
+    font-weight: 600;
+    transition: 200ms;
+}
+
+/* *******************HERO SECTION********************* */
+
+.hero-section{
+    height: 95vh;
+    display: flex;
+    position: relative;
+    /* border: 2px solid blue; */
+}
+.faded-text{
+    user-select: none;
+    font-size: 4rem;
+    color: gainsboro;
+    position: absolute;
+    bottom: -1.3rem;
+    left: 2rem;
+}
+.hero-section-left{
+    width: 65%;
+    /* height: fit-content; */
+    color: rgb(82, 79, 79);
+    padding: 2rem 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 2rem;
+    /* border: 2px solid green; */
+}
+.hero-section-heading{
+    font-size: 2rem;
+    /* border: 2px solid red; */
+}
+.hero-section-sub-heading{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.hero-section-description{
+    max-width: 80%;
+}
+.role{
+    color: rgb(85, 85, 248);
+    font-weight: 800;
+}
+
+/* ****************BUTTON STYLING************ */
+.btn-pink{
+    width: fit-content;
+    position: relative;
+
+    background-color: #e84949;
+    color: white;
+    font-size: 15px;
+    padding: 0.7rem 1.5rem;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 2px 2px 5px 2px rgb(197, 194, 194);
+}
+.btn-pink::after{
+    content: "";
+    width: 10rem;
+    height: 10rem;
+
+    transform: translate(-50%, -50%) scale(0.2);
+    border-radius: 80%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(85, 85, 248);
+    z-index: -1;
+    opacity: 0;
+}
+.btn-pink:hover{
+    /* border: 1px solid #e84949; */
+    color: white;
+    cursor: pointer;
+}
+.btn-pink:hover::after{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+/* ********************HERO SECTION RIGHT********************* */
+
+.hero-section-right{
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    /* border: 2px solid blue; */
+
+    position: relative;
+}
+.user-image img{
+    max-height: 55%;
+    max-width: 100%;
+}
+.user-image{
+    align-self: center;
+    padding: 2em;
+    /* border: 2px solid purple; */
+    animation: myimganimation 2s ease-in-out 200ms infinite alternate;
+}
+@keyframes myimganimation {
+    0%{
+        box-shadow: 2px 2px 10px gray;
+        filter: grayscale(0%);
+    }
+    50%{
+        box-shadow: 2px 2px 10px 6px gray;
+    }
+    100%{
+        box-shadow: none;
+        scale: 0.9;
+        filter: grayscale(100%);
+    }
+}
+.icons{
+    position: absolute;
+    z-index: 10;
+}
+
+.icon-dots{
+    /* border: 2px solid black; */
+    bottom: 3.5em;
+    right: 1em;
+    animation: dot-animation 2s ease-in-out infinite alternate;
+}
+@keyframes dot-animation {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(1em);
+    }
+}
+
+.icon-cube{
+    /* border: 2px solid black; */
+    top: 4em;
+    right: 1.5em;
+    animation: cube-animation 2s linear infinite alternate;
+}
+@keyframes cube-animation {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
+
+.icon-circle{
+    /* border: 2px solid black; */
+    left: 2em;
+    bottom: 5em;
+    animation: circle-animation 2.5s ease-in-out infinite alternate;
+}
+@keyframes circle-animation {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translateX(2em) translateY(-1.5em);
+    }
+}
+
+.icon-zigzag{
+    /* border: 2px solid black; */
+    left: 0%;
+    top: 15%;
+    animation: zigzag-animation 2s ease-in-out infinite alternate;
+}
+@keyframes zigzag-animation {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(80%);
+    }
+}
+
+.icon-plus{
+    /* border: 2px solid black; */
+    top: 14%;
+    left: 50%;
+    animation: plus-animation 2s ease-in-out infinite alternate;
+}
+@keyframes plus-animation {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-50%);
+    }
+}
